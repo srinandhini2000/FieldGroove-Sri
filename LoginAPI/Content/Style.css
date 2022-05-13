@@ -1,0 +1,154 @@
+﻿.navbar {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 180px;
+}
+
+.navbar a {
+    color: rgb(65, 61, 61);
+    text-decoration: none;
+    margin: 0px -50px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.navbar a:hover, .dropdown:hover {
+    background-color: red;
+}
+
+h1 {
+    color: blue;
+}
+
+#groov {
+    color: lightblue;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+    .dropdown .dropbtn {
+        font-size: 13px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: red;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#button {
+    color: white;
+    padding: 10px 25px;
+    background: #162547;
+    border-color: #162547;
+    border-radius: 35px;
+    outline: none;
+}
+
+form {
+    padding: 50px 40px 70px 40px;
+    margin-left: 330px;
+    border: 2px solid #162547;
+    width: 40%;
+    background-color: #162547;
+}
+
+.button {
+    background-color: #162547;
+    color: rgb(147, 145, 145);
+    border: rgb(147, 145, 145);
+    font-weight: 400;
+}
+
+.mini-links .item:before {
+    top: 50%;
+    right: 0px;
+    width: 1px;
+    height: 14px;
+    background-color: #CDCDCD;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.mini-links .item {
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+}
+
+li {
+    line-height: 20px;
+}
+
+.mini-links {
+    padding: 15px 20px 20px 20px;
+    height: auto;
+    text-align: center;
+}
+
+.mini-links {
+    
+    padding: 15px 0px 20px 0px;
+    text-align: center;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0 0 10px 25px;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+user agent stylesheet
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #162547;
+    color: white;
+   padding-top:50px;
+}
+
+.a {
+    color: red;
+}
