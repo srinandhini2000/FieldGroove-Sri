@@ -8,8 +8,8 @@ namespace LoginAPI.Models
 {
     public class Login
     {
-       [Required(ErrorMessage="Please enter the Email!")]
-       [Display(Name ="Enter email...")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Email is requierd")]
+        
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Please enter the Password!")]

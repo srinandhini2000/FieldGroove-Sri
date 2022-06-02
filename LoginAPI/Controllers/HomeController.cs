@@ -11,7 +11,6 @@ using System.Configuration;
 using System.Web.Security;
 
 
-
 namespace LoginAPI.Controllers
 {
     public class HomeController : Controller
@@ -19,25 +18,16 @@ namespace LoginAPI.Controllers
         Models.DAL obj = new Models.DAL();
         public ActionResult Index()
         {
-
-            try
-            {
-                int data = 1 + 1;
-                Logger.Info("Information on" + data);
-            }
-            catch (Exception ex)
-            {
-
-                Logger.Error("Error on:",ex);
-            }
-
+            
             return View();
+           
         }
 
         [AllowAnonymous]
         [HttpPost]
         public ActionResult Index(Login login)
         {
+           
             string connection = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             SqlConnection sql = new SqlConnection(connection);
             SqlCommand com = new SqlCommand("sp_Signin");
@@ -49,9 +39,11 @@ namespace LoginAPI.Controllers
             SqlDataReader dr = com.ExecuteReader();
             if(dr.Read())
             {
-                FormsAuthentication.SetAuthCookie(login.Email, true);
+                Session["Password"] = login.Password.ToString();
                 Session["Email"] = login.Email.ToString();
-                return RedirectToAction("Leads","Leads");
+              
+                    return RedirectToAction("Leads", "Leads");
+               
             }
             else
             {
@@ -62,8 +54,18 @@ namespace LoginAPI.Controllers
 
             return View();
         }
-       
-           
-        
+
+        public RedirectToRouteResult Logout(object sender, EventArgs e)
+        {
+
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            Session.Clear();
+            Session.RemoveAll();
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }

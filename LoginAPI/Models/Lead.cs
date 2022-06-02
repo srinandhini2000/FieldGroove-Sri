@@ -7,6 +7,7 @@ namespace LoginAPI.Models
 {
     public class Lead
     {
+
         public string Name { get; set; }
         public string Project_Name { get; set; }
         public string Status { get; set; }
@@ -19,5 +20,6 @@ namespace LoginAPI.Models
         public string Action { get; set; }
         public string Assignee { get; set; }
         public string Bid_Date { get; set; }
+        public int Id { get; set; }
     }
 }

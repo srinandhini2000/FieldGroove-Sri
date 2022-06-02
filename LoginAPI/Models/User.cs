@@ -9,14 +9,20 @@ namespace LoginAPI.Models
     public class User
     {
         [Key]
+        [Required]
+        [Display(Name ="Firstname")]
+        [StringLength(20,ErrorMessage ="Name not be exceed")]
         public string Firstname { get; set; }
         [Required]
+        [Display(Name = "Lastname")]
+        [StringLength(20, ErrorMessage = "Name not be exceed")]
         public string Lastname { get; set; }
         [Required]
         public string Companyname { get; set; }
         [Required]
         public string Phone { get; set; }
         [Required]
+       
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
